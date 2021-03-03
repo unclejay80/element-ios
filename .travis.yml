@@ -1,0 +1,12 @@
+language: objective-c
+osx_image: xcode9
+
+before_install:
+  - gem install cocoapods -v '1.3.1'
+  - pod repo update
+  
+# If your build needs more advanced behavior, see detailed Travis CI instructions:
+# https://docs.travis-ci.com/user/languages/objective-c/
+
+after_success:
+  - bash <(curl -s https://copilot.blackducksoftware.com/ci/travis/scripts/upload)
